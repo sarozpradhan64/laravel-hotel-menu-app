@@ -1,8 +1,12 @@
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="header" class="flex">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Menu Categories') }}
         </h2>
+
+        <a href="{{route('menu-categories.create')}}">
+            <x-primary-button> Add New </x-primary-button>
+        </a>
     </x-slot>
 
     <div class="py-12">
@@ -136,16 +140,32 @@
                                 @else
                                     class="px-6 py-4" 
                                 @endif>
+
+                                @if($col === 'state')
+                                    @if($category->$col == true)
+                                        Active 
+                                    @else 
+                                        False
+                                    @endif
+                                @else
                                 {{$category->$col}}
+                                @endif
                             </th>
                             @endforeach
-
-
-                            {{-- <td class="px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td> --}}
+                            
+                            <td>
+                                <a href="{{route('menu-categories.show', $category)}}">Show</a>
+                                <a href="{{route('menu-categories.edit', $category)}}"> Edit</a> 
+                                <a class="delete button" href="javascript:;" 
+                                onclick="document.getElementById('delete-item-{{$category->id}}').submit()"> Delete </a>
+                                <form method="post" id="delete-item-{{$category->id}}" action="{{route('menu-categories.destroy', $category)}}">
+                                    @csrf
+                                    @method('delete')
+                                </form>
+                            </td>
+                            
                         </tr>
+            
                         @endforeach
                     </tbody>
                 </table>

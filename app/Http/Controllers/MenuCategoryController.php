@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMenuCategoryRequest;
 use App\Http\Requests\UpdateMenuCategoryRequest;
 use App\Models\MenuCategory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
 
 class MenuCategoryController extends Controller
 {
@@ -17,16 +20,16 @@ class MenuCategoryController extends Controller
     {
         $categories = MenuCategory::all();
         $allCols = Schema::getColumnListing('menu_categories');
-        $cols = array_diff($allCols, ['id', 'user_id', 'slug', 'description']);
+        $cols = array_diff($allCols, ['id', 'user_id', 'slug', 'description', 'updated_at']);
         return view('menu-category.index', compact('categories', 'cols'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('menu-category.create');
     }
 
     /**
@@ -34,15 +37,21 @@ class MenuCategoryController extends Controller
      */
     public function store(StoreMenuCategoryRequest $request)
     {
-        //
+        $request->merge([
+            'user_id' => Auth::id(),
+            'slug' => Str::slug($request->title, '-')
+        ]);
+        MenuCategory::create($request->except('image'));
+        Session::flash('Menu Category Created !');
+        return redirect('menu-categories');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(MenuCategory $menuCategory)
+    public function show(MenuCategory $menuCategory): View
     {
-        //
+        return view('menu-category.show', compact('menuCategory'));
     }
 
     /**
@@ -50,7 +59,7 @@ class MenuCategoryController extends Controller
      */
     public function edit(MenuCategory $menuCategory)
     {
-        //
+        return view('menu-category.edit', compact('menuCategory'));
     }
 
     /**
@@ -58,7 +67,17 @@ class MenuCategoryController extends Controller
      */
     public function update(UpdateMenuCategoryRequest $request, MenuCategory $menuCategory)
     {
-        //
+        $request->merge([
+            'user_id' => Auth::id(),
+            'slug' => Str::slug($request->title, '-')
+        ]);
+        if ($menuCategory->user_id === Auth::id()) {
+            $menuCategory->update($request->except('image'));
+            Session::flash('success', 'Menu Category Updated !');
+            return redirect('menu-categories');
+        }
+        Session::flash('error', 'Unauthorized !');
+        return back();
     }
 
     /**
@@ -66,6 +85,8 @@ class MenuCategoryController extends Controller
      */
     public function destroy(MenuCategory $menuCategory)
     {
-        //
+        $menuCategory->delete();
+        Session::flash('success', 'Menu Category Deleted !');
+        return back();
     }
 }
