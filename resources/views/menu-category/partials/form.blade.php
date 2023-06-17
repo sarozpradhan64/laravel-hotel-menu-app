@@ -9,7 +9,7 @@
         </p>
     </header>
 
-    <form method="post" action="{{ route('menu-categories.store') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('menu-categories.store') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
         @csrf
         {{-- @method('put') --}}
 

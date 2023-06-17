@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\ImageManager;
 use App\Http\Requests\StoreMenuCategoryRequest;
 use App\Http\Requests\UpdateMenuCategoryRequest;
 use App\Models\MenuCategory;
@@ -13,9 +14,8 @@ use Illuminate\Support\Str;
 
 class MenuCategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    use ImageManager;
+
     public function index(): View
     {
         $categories = MenuCategory::all();
@@ -37,12 +37,20 @@ class MenuCategoryController extends Controller
      */
     public function store(StoreMenuCategoryRequest $request)
     {
+        $filename = null;
+        if ($request->hasFile('image')) {
+            $path = 'images/menu-categories/';
+
+            $filename = $this->fileUpload($request->file('image'), $path);
+        }
         $request->merge([
             'user_id' => Auth::id(),
-            'slug' => Str::slug($request->title, '-')
+            'slug' => Str::slug($request->title, '-'),
         ]);
-        MenuCategory::create($request->except('image'));
-        Session::flash('Menu Category Created !');
+        $category = MenuCategory::create($request->except('image'));
+        $category->image = $filename;
+        $category->save();
+        Session::flash('success', 'Menu Category Created !');
         return redirect('menu-categories');
     }
 
@@ -67,12 +75,24 @@ class MenuCategoryController extends Controller
      */
     public function update(UpdateMenuCategoryRequest $request, MenuCategory $menuCategory)
     {
+        $filename = null;
+
+        if ($request->hasFile('image')) {
+            $path = 'images/menu-categories/';
+
+            $filename = $this->fileUpload($request->file('image'), $path, $menuCategory->image);
+        }
+
         $request->merge([
             'user_id' => Auth::id(),
             'slug' => Str::slug($request->title, '-')
         ]);
+
+
         if ($menuCategory->user_id === Auth::id()) {
             $menuCategory->update($request->except('image'));
+            $menuCategory->image = $filename;
+            $menuCategory->save();
             Session::flash('success', 'Menu Category Updated !');
             return redirect('menu-categories');
         }
