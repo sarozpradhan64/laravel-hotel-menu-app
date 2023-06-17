@@ -91,8 +91,11 @@ class MenuCategoryController extends Controller
 
         if ($menuCategory->user_id === Auth::id()) {
             $menuCategory->update($request->except('image'));
-            $menuCategory->image = $filename;
-            $menuCategory->save();
+            if ($filename) {
+                $menuCategory->image = $filename;
+                $menuCategory->save();
+            }
+
             Session::flash('success', 'Menu Category Updated !');
             return redirect('menu-categories');
         }

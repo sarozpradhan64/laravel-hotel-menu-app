@@ -13,7 +13,7 @@ class MenuItem extends Model
 
     protected $guarded = [];
 
-    public function menuItems(): BelongsTo
+    public function menuCategory(): BelongsTo
     {
         return $this->belongsTo(MenuCategory::class);
     }

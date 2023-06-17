@@ -2,10 +2,10 @@
 <x-app-layout>
     <x-slot name="header" class="flex">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Menu Categories') }}
+            {{ __('Menu items') }}
         </h2>
 
-        <a href="{{route('menu-categories.create')}}">
+        <a href="{{route('menu-items.create')}}">
             <x-primary-button> Add New </x-primary-button>
         </a>
     </x-slot>
@@ -52,7 +52,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($categories as $category)
+                        @foreach($items as $item)
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="w-4 p-4">
@@ -68,36 +68,36 @@
                                 class="px-6 py-4" @endif>
 
                                 @if($col === 'state')
-                                    @if($category->$col == true)
+                                    @if($item->$col == true)
                                     Active
                                     @else
                                     False
                                     @endif
                                 @elseif($col === 'image')
-                                <a href="{{$category->image_url}}" target="_blank"><img class="w-10 h-10 rounded-full"
-                                        src="{{$category->image_url}}" alt="{{$category->title}}"></a>
+                                <a href="{{$item->image_url}}" target="_blank"><img class="w-10 h-10 rounded-full"
+                                        src="{{$item->image_url}}" alt="{{$item->title}}"></a>
                                 @else
-                                {{$category->$col}}
+                                {{$item->$col}}
                                 @endif
                             </td>
                             @endforeach
 
                             <td class="flex justify-start items-center py-3">
-                                <a href="{{route('menu-categories.show', $category)}}"
+                                <a href="{{route('menu-items.show', $item)}}"
                                  class="flex justify-center items-center rounded-full w-8 h-8 mx-1 hover:bg-blue-100">
                                     <box-icon name='show-alt' color='#4413ea' size="18px"></box-icon>
                                 </a>
-                                <a href="{{route('menu-categories.edit', $category)}}"
+                                <a href="{{route('menu-items.edit', $item)}}"
                                 class="flex justify-center items-center rounded-full w-8 h-8 mx-1 hover:bg-green-100">
                                     <box-icon name='edit' flip='horizontal' color='#27b200' size="18px" ></box-icon>    
                                 </a>
                                 <a href="javascript:;"
                                 class="flex justify-center items-center rounded-full w-8 h-8 mx-1 hover:bg-red-100"
-                                    onclick="document.getElementById('delete-item-{{$category->id}}').submit()">
+                                    onclick="document.getElementById('delete-item-{{$item->id}}').submit()">
                                     <box-icon name='message-square-x' type='solid' color='#b20000' size="18px"></box-icon>
                                 </a>
-                                <form method="post" id="delete-item-{{$category->id}}"
-                                    action="{{route('menu-categories.destroy', $category)}}">
+                                <form method="post" id="delete-item-{{$item->id}}"
+                                    action="{{route('menu-items.destroy', $item)}}">
                                     @csrf
                                     @method('delete')
                                 </form>
