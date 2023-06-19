@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateMenuCategoryRequest extends FormRequest
+class StoreMenuItemRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,8 @@ class UpdateMenuCategoryRequest extends FormRequest
     {
         return [
             'title' => ['required'],
-            'description' => ['required'],
+            'menu_category_id'=> ['required'],
+            'price' => ['required', 'numeric'],
             'state' => ['required']
         ];
     }

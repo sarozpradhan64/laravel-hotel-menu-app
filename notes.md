@@ -1,2 +1,2 @@
 ### useful commands
-``` php artisan make:controller MenuCategoryController --model=MenuCategory --resource --requests ```
+``` php artisan make:controller MenuCategoryController --model=MenuCategory --resource --request ```

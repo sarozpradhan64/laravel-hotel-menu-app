@@ -19,8 +19,7 @@ class MenuCategoryController extends Controller
     public function index(): View
     {
         $categories = MenuCategory::all();
-        $allCols = Schema::getColumnListing('menu_categories');
-        $cols = array_diff($allCols, ['id', 'user_id', 'slug', 'description', 'updated_at']);
+        $cols = ['title', 'image', 'state', 'created_at'];
         return view('menu-category.index', compact('categories', 'cols'));
     }
 
