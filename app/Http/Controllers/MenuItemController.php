@@ -53,7 +53,7 @@ class MenuItemController extends Controller
         $category->image = $filename;
         $category->save();
         Session::flash('success', 'Menu Item Created !');
-        return redirect(redirect('menu-item.index'));
+        return redirect(route('menu-item.index'));
     }
 
     /**

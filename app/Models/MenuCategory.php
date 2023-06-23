@@ -25,9 +25,7 @@ class MenuCategory extends Model
 
         if ($this->image && file_exists($fullPath)) {
             return url('storage/' . $imagePath);
-        } else {
-            'no image.jpg';
         }
-        return 'no image';  
+        return url(asset('images/no-image.jpg'));  
     }
 }
