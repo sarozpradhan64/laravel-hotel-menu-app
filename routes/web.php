@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('menu-items', MenuItemController::class);
 
     Route::get('qrcode', [ShareController::class, 'generateQRCode'])->name('share.index');
-
+    Route::get('download-qrcode', [ShareController::class, 'downloadQRcode'])->name('share.download');
 });
 
 

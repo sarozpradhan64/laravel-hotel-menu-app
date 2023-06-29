@@ -11,7 +11,11 @@
 
                 <div class="flex flex-col items-center p-6 text-gray-900 dark:text-gray-100">
                     <h2 class="text-2xl mb-4 font-bold">Download or share this QR Code</h2>
-                    {{$qr}}
+                    
+                    <img src="data:image/png;base64, {!! base64_encode($qr) !!}" />
+                    <a href="{{route('share.download')}}" class="mt-3">
+                        <x-primary-button> Download </x-primary-button>
+                    </a>
 
                     <div class="mt-3">
                         {{$share_url}}
