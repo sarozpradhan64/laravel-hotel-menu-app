@@ -24,8 +24,8 @@ return new class extends Migration
         });
 
         DB::table('users')->insert([
-            'name'=>'Saroj Pradhan',
-            'email'=>'sarozpradhan64@gmail.com',
+            'name'=>'Blaze Restaurant',
+            'email'=>'blazecodes7@gmail.com',
             'password'=> Hash::make('test@123')
         ]);
     }
