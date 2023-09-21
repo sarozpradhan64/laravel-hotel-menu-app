@@ -4,21 +4,19 @@
             {{ __('Edit New Menu Category') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Ensure your account is using a long, random password to stay secure.') }}
-        </p>
+
     </header>
 
-    <form method="post" action="{{ route('menu-categories.update', $menuCategory) }}" enctype="multipart/form-data" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('menu-categories.update', $menuCategory) }}" enctype="multipart/form-data"
+        class="mt-6 space-y-6">
         @csrf
         @method('put')
 
         <div>
             <x-input-label for="title" :value="__('Title')" />
-            <x-text-input id="title" name="title" type="text" class="mt-1 block w-full"
-            value="{{$menuCategory->title}}"
+            <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" value="{{$menuCategory->title}}"
                 autocomplete="current-password" />
-        <x-input-error :messages="$errors->get('title')" class="mt-2" />
+            <x-input-error :messages="$errors->get('title')" class="mt-2" />
         </div>
         <div>
             <x-input-label for="image" :value="__('Image')" />
@@ -38,14 +36,20 @@
 
             <div class="flex items-center justify-items-center">
                 <div class="flex items-center me-3">
-                    <input  id="state-1" type="radio" @if($menuCategory->state == true) checked @endif   value="1" name="state"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <input id="state-1" type="radio" @if($menuCategory->state == true) checked @endif value="1"
+                    name="state"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500
+                    dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
+                    dark:border-gray-600">
                     <label for="state-1"
                         class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Active</label>
                 </div>
                 <div class="flex items-center">
-                    <input  id="state-2" type="radio" @if($menuCategory->state == false) checked @endif value="0" name="state" 
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <input id="state-2" type="radio" @if($menuCategory->state == false) checked @endif value="0"
+                    name="state"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500
+                    dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
+                    dark:border-gray-600">
                     <label for="state-2"
                         class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Inactive</label>
                 </div>
@@ -61,7 +65,7 @@
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
-            
+
         </div>
     </form>
 </section>

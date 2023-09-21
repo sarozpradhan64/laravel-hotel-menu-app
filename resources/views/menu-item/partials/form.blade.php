@@ -4,9 +4,7 @@
             {{ __('Add New Menu Item') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Ensure your account is using a long, random password to stay secure.') }}
-        </p>
+
     </header>
 
     <form method="post" action="{{ route('menu-items.store') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
@@ -54,8 +52,8 @@
 
         <div>
             <x-input-label for="quantity" :value="__('Quantity')" />
-            <x-text-input id="quantity" name="quantity" type="text" class="mt-1 block w-full"
-                autocomplete="quantity" value="{{old('quantity')}}" />
+            <x-text-input id="quantity" name="quantity" type="text" class="mt-1 block w-full" autocomplete="quantity"
+                value="{{old('quantity')}}" />
             <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
         </div>
 

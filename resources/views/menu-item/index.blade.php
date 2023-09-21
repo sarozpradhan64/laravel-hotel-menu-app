@@ -5,9 +5,7 @@
             {{ __('Menu items') }}
         </h2>
 
-        <a href="{{route('menu-items.create')}}">
-            <x-primary-button> Add New </x-primary-button>
-        </a>
+       
     </x-slot>
 
     <div class="py-12">
@@ -30,6 +28,10 @@
                             class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Search for items">
                     </div>
+
+                    <a href="{{route('menu-items.create')}}">
+                        <x-primary-button> Add New </x-primary-button>
+                    </a>
                 </div>
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -84,17 +86,17 @@
 
                             <td class="flex justify-start items-center py-3">
                                 <a href="{{route('menu-items.show', $item)}}"
-                                 class="flex justify-center items-center rounded-full w-8 h-8 mx-1 hover:bg-blue-100">
-                                    <box-icon name='show-alt' color='#4413ea' size="18px"></box-icon>
+                                 class="flex justify-center items-center rounded-full w-8 h-8 mx-1 text-green-600 hover:bg-blue-100">
+                                    <i class="fa-regular fa-eye"></i>
                                 </a>
                                 <a href="{{route('menu-items.edit', $item)}}"
-                                class="flex justify-center items-center rounded-full w-8 h-8 mx-1 hover:bg-green-100">
-                                    <box-icon name='edit' flip='horizontal' color='#27b200' size="18px" ></box-icon>    
+                                class="flex justify-center items-center rounded-full w-8 h-8 mx-1 text-blue-600 hover:bg-green-100">
+                                    <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
                                 <a href="javascript:;"
-                                class="flex justify-center items-center rounded-full w-8 h-8 mx-1 hover:bg-red-100"
+                                class="flex justify-center items-center rounded-full w-8 h-8 mx-1 text-red-600 hover:bg-red-100"
                                     onclick="document.getElementById('delete-item-{{$item->id}}').submit()">
-                                    <box-icon name='message-square-x' type='solid' color='#b20000' size="18px"></box-icon>
+                                    <i class="fa-regular fa-trash-can"></i>
                                 </a>
                                 <form method="post" id="delete-item-{{$item->id}}"
                                     action="{{route('menu-items.destroy', $item)}}">

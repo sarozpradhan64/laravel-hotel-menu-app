@@ -1,1 +1,1 @@
-<img src="{{asset('images/logo.png')}}" style="width: 90px"/>
+<img src="{{asset('images/logo.png')}}" class="rounded-md" style="width: 120px"/>
