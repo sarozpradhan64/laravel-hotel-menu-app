@@ -18,7 +18,7 @@
                     </a>
 
                     <div class="mt-3">
-                        {{$share_url}}
+                        <a href="{{$share_url}}" target="_blank" rel="noreferrer" class="text-blue-600">{{$share_url}}</a>
                     </div>
                 </div>
             </div>
