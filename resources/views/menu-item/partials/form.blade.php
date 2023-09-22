@@ -88,9 +88,6 @@
                 </div>
             </div>
 
-
-            {{--
-            <x-text-input id="state" name="state" type="text" class="mt-1 block w-full" autocomplete="new-state" /> --}}
             <x-input-error :messages="$errors->get('state')" class="mt-2" />
         </div>
 

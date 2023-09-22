@@ -78,14 +78,31 @@ class MenuItemController extends Controller
      */
     public function update(UpdateMenuItemRequest $request, MenuItem $menuItem)
     {
-        //
+        $filename = null;
+        if ($request->hasFile('image')) {
+            $path = 'images/menu-items/';
+
+            $filename = $this->fileUpload($request->file('image'), $path);
+        }
+        $request->merge([
+            'slug' => Str::slug($request->title, '-'),
+        ]);
+
+        $data = $request->except('image');
+        $data['image'] = $filename;
+        $category = $menuItem->update($data);
+
+        Session::flash('success', 'Menu Item Created !');
+        return redirect(route('menu-items.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(MenuItem $menuItem)
     {
-        //
+        $menuItem->delete();
+        Session::flash('success', 'Menu Item Deleted !');
+        return back();
     }
 }
