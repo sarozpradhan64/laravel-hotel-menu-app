@@ -6,13 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Menu App - Showcase your Menu, Easy Share with QRCode</title>
+    <title> Metho Menu - Showcase your Menu, Easy Share with QRCode</title>
 
     <!-- Meta SEO -->
-    <meta name="title" content="Hotel Menu App - Showcase your Menu, Easy Share with QRCode">
-    <meta name="description"
-        content="
-    The Hotel Menu App is a cutting-edge solution that enables hotels and restaurants to showcase their menus in a visually appealing and interactive way. 
+    <meta name="title" content=" Metho Menu - Showcase your Menu, Easy Share with QRCode">
+    <meta name="description" content="
+    The  Metho Menu is a cutting-edge solution that enables hotels and restaurants to showcase their menus in a visually appealing and interactive way. 
     With the integration of QRCode technology, 
     sharing menus has never been easier, providing customers with a contactless dining experience. Customize your menu, update it effortlessly,
      and gain valuable insights with this user-friendly app.">

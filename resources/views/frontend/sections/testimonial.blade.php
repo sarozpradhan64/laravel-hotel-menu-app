@@ -12,9 +12,7 @@
                     Hotel Menu Sharing App simplifies dining with a quick QR code scan. No more paper menus, just instant access to restaurant offerings on your phone. It's the touchless, eco-friendly way to dine out, ensuring convenience and safety in today's world.</p>
             </blockquote>
             <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                <img class="w-6 h-6 rounded-full"
-                    src="https://scontent.fktm8-1.fna.fbcdn.net/v/t1.6435-9/126595398_3254346654671998_1033726249794879181_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Zf9ZpSJGaisAX-9WcP7&_nc_ht=scontent.fktm8-1.fna&oh=00_AfAMecRI060_0SCB5zLYz_mQVYiBcK1MxVmu-D4zoYLoQg&oe=6534AD63"
-                    alt="profile picture">
+                
                 <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
                     <div class="pr-3 font-medium text-gray-900 dark:text-white">Kapil Dev Pant</div>
                     <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Manager at Pant Dhaba</div>
