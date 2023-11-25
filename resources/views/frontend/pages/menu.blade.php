@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Menu</title>
-
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -17,7 +17,7 @@
             <!-- Menu Item 1 -->
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-xl font-semibold mb-4">{{$category->title}}</h2>
-                <ul>
+                <ul class="ps-4" style="list-style: disc">
                     @foreach($category->menuItems as $item)
                     <li>{{$item->title}}</li>
                     @endforeach

@@ -10,14 +10,14 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="flex flex-col items-center p-6 text-gray-900 dark:text-gray-100">
-                    <h2 class="text-2xl mb-4 font-bold">Download or share this QR Code</h2>
+                    <h2 class="text-2xl mb-8 font-bold">Download or share this QR Code</h2>
                     
                     <img src="data:image/png;base64, {!! base64_encode($qr) !!}" />
-                    <a href="{{route('share.download')}}" class="mt-3">
+                    <a href="{{route('share.download')}}" class="mt-8">
                         <x-primary-button> Download </x-primary-button>
                     </a>
 
-                    <div class="mt-3">
+                    <div class="mt-8">
                         <a href="{{$share_url}}" target="_blank" rel="noreferrer" class="text-blue-600">{{$share_url}}</a>
                     </div>
                 </div>
