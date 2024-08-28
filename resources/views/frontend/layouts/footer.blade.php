@@ -5,33 +5,28 @@
                 <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
                 <ul class="text-gray-500 dark:text-gray-400">
                     <li class="mb-4">
-                        <a href="#" class=" hover:underline">About</a>
+                        <a href="javascript:;" class=" hover:underline">About</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Careers</a>
+                        <a href="javascript:;" class="hover:underline">Careers</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Brand Center</a>
+                        <a href="javascript:;" class="hover:underline">Brand Center</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Blog</a>
+                        <a href="javascript:;" class="hover:underline">Blog</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h3>
                 <ul class="text-gray-500 dark:text-gray-400">
+
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Discord Server</a>
+                        <a href="javascript:;" class="hover:underline">Facebook</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Twitter</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Facebook</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Contact Us</a>
+                        <a href="javascript:;" class="hover:underline">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -39,30 +34,27 @@
                 <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h3>
                 <ul class="text-gray-500 dark:text-gray-400">
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Privacy Policy</a>
+                        <a href="javascript:;" class="hover:underline">Privacy Policy</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Licensing</a>
+                        <a href="javascript:;" class="hover:underline">Licensing</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Terms</a>
+                        <a href="javascript:;" class="hover:underline">Terms</a>
                     </li>
                 </ul>
             </div>
             <div>
-                <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick Links</h3>
                 <ul class="text-gray-500 dark:text-gray-400">
                     <li class="mb-4">
-                        <a href="#" class=" hover:underline">About</a>
+                        <a href="javascript:;" class=" hover:underline">About</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Careers</a>
+                        <a href="javascript:;" class="hover:underline">Popular Menu</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Brand Center</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Blog</a>
+                        <a href="javascript:;" class="hover:underline">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -70,23 +62,17 @@
                 <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h3>
                 <ul class="text-gray-500 dark:text-gray-400">
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">iOS</a>
+                        <a href="javascript:;" class="hover:underline">iOS</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Android</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Windows</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">MacOS</a>
+                        <a href="javascript:;" class="hover:underline">Android</a>
                     </li>
                 </ul>
             </div>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
         <div class="text-center">
-            <a href="#"
+            <a href="javascript:;"
                 class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
                 <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
             </a>
